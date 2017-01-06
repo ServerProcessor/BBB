@@ -1,5 +1,5 @@
 ■ SET r30.t5 : Sets bit 5 on register 30 to be high. REG30 is used to set the
-PRU0 GPIO pins high. Bit 5 specifi cally controls the pr1_pru0_pru_r30_5
+PRU0 GPIO pins high. Bit 5 specifically controls the pr1_pru0_pru_r30_5
 pin output.
 
 ■ MOV r0, DELAY : Stores the delay value (i.e., 5,000,000) in the register REG0.
