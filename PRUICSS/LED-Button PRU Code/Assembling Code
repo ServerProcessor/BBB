@@ -1,1 +1,2 @@
 pasm ‐b Main.p
+gcc Main.c -o Main -lpthread -lprussdrv
