@@ -1,0 +1,17 @@
+sudo cp Main‐00A0.dtbo /lib/firmware
+
+root@beaglebone:~# sudo cat $PINS|grep '103\|105'
+
+pin 103 (44e1099c) 00000002 pinctrl-single 
+pin 105 (44e109a4) 00000027 pinctrl-single 
+
+root@beaglebone:~# modprobe uio_pruss
+root@beaglebone:~# lsmod
+Module                  Size  Used by
+uio_pruss               4066  0 
+g_multi                50407  2 
+libcomposite           15028  1 g_multi
+omap_rng                4062  0 
+mt7601Usta            458758  0 
+
+uio_pruss loaded
