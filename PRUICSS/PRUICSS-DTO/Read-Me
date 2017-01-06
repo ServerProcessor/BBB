@@ -1,0 +1,4 @@
+■ P9_11: gpio0[30] output ($PINS 28, mode 7, pull‐down) 0x07
+■ P9_13: gpio0[31] input ($PINS 29, mode 7, pull‐down) 0x27
+■ P9_27: pr1_pru0_pru_r30_5 output ($PINS 105, mode 5, pull‐down) 0x05
+■ P9_28: pr1_pru0_pru_r31_3 input ($PINS 103, mode 6, pull‐down) 0x26
