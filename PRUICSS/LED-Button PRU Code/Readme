@@ -1,0 +1,33 @@
+■ SET r30.t5 : Sets bit 5 on register 30 to be high. REG30 is used to set the
+PRU0 GPIO pins high. Bit 5 specifi cally controls the pr1_pru0_pru_r30_5
+pin output.
+
+■ MOV r0, DELAY : Stores the delay value (i.e., 5,000,000) in the register REG0.
+Registers are used here, just as variables are used in C. Assembly opera-
+tions are performed on registers.
+
+■ DELAYON : A user‐defi ned label to which the code can branch
+
+■ SUB r0, r0, 1 : Subtracts 1 from REG0 and stores the result in REG0. It
+is essentially the same as the code REG0 = REG0 ‐ 1.
+
+■ QBNE DELAYON, r0, 0 : Performs a quick branch if REG0 is not equal to
+0. This creates a loop that loops these two instructions 5,000,000 times
+(taking exactly 50 ms!).
+
+■ CLR r30.t5 : Clears bit 5 on register 30, setting the output low and turn-
+ing the LED off.
+
+■ QBBC START, r31.t3 : Does a quick branch to START if the r31.t3 bit is
+clear (i.e., 0 ). REG31 is the input register that is used to read the state of
+the input— t3 is bit 3, which is connected to the pr1_pru0_pru_r31_3 pin.
+As the button input pin is confi gured in the overlay to have a pull‐down
+resistor enabled, it will return 0 when it is not pressed and 1 when it is
+pressed. If the button is not pressed, then the program loops forever,
+continually fl ashing the LED. When the button is fi rst found to be in the
+pressed state at this point during program execution, then the program
+continues to the next line.
+
+■ The next instruction is discussed shortly. The instruction generates an inter-
+rupt that is sent to the host program, notifying it that the PRU program
+is ending. The program then ends with the call to HALT
