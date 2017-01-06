@@ -2,4 +2,4 @@
 
 echo "Compiling the overlay from .dts to .dtbo"
 
-dtc -O dtb -o EBB-PRU-Example-00A0.dtbo -b 0 -@ EBB-PRU-Example.dts
+dtc -O dtb -o Main.dtbo -b 0 -@ Main.dts
